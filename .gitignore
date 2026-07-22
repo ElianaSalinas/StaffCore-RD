@@ -1,0 +1,27 @@
+## .NET / ASP.NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+## Visual Studio
+.vs/
+*.DotSettings.user
+
+## Secretos y configuración local sensible
+appsettings.*.local.json
+secrets.json
+
+## Logs
+*.log
+logs/
+
+## NuGet
+*.nupkg
+.nuget/
+
+## Publicación
+publish/
