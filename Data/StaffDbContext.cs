@@ -26,6 +26,11 @@ namespace StaffCore_RD.Data
                 .HasIndex(s => s.Cedula)
                 .IsUnique();
 
+            // Precisión decimal para Salario → decimal(18,2) sin truncamiento silencioso
+            modelBuilder.Entity<Staff>()
+                .Property(s => s.Salario)
+                .HasPrecision(18, 2);
+
             // Datos semilla — 2 registros con nombres dominicanos reales, departamentos distintos
             modelBuilder.Entity<Staff>().HasData(
                 new Staff
