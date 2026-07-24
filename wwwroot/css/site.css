@@ -1,22 +1,171 @@
+:root {
+    /* Nueva paleta de colores StaffCore RD */
+    --sc-red: #E30613;
+    --sc-dark-blue: #1B1C6B;
+    --sc-light-blue: #4E8BB5;
+    --sc-gray: #BDBDBD;
+    --sc-dark-gray: #2B2B2C;
+    --sc-off-white: #F4EFEA;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Fondo general de la aplicación */
 body {
-  margin-bottom: 60px;
+    margin-bottom: 80px; /* Espacio para el footer */
+    background-color: var(--sc-off-white);
+    color: var(--sc-dark-gray);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- OVERRIDES DE BOOTSTRAP PARA USAR LA NUEVA PALETA --- */
+
+/* Textos */
+.text-dark { color: var(--sc-dark-gray) !important; }
+.text-primary { color: var(--sc-dark-blue) !important; }
+.text-danger { color: var(--sc-red) !important; }
+.text-info { color: var(--sc-light-blue) !important; }
+.text-muted { color: #7a7a7a !important; } /* Un poco más oscuro que sc-gray para legibilidad */
+
+/* Fondos */
+.bg-dark { background-color: var(--sc-dark-blue) !important; color: white !important; }
+.bg-primary { background-color: var(--sc-dark-blue) !important; }
+.bg-danger { background-color: var(--sc-red) !important; }
+.bg-light { background-color: #ffffff !important; border: 1px solid var(--sc-gray); }
+
+/* Navbar */
+.navbar.bg-dark {
+    background-color: var(--sc-dark-blue) !important;
+    border-bottom: 4px solid var(--sc-red); /* Detalle visual en el navbar */
+}
+.navbar-brand i { color: var(--sc-light-blue); }
+
+/* Botones "Dark" (se vuelven Dark Blue) */
+.btn-dark {
+    background-color: var(--sc-dark-blue);
+    border-color: var(--sc-dark-blue);
+    color: white;
+}
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active {
+    background-color: #12134a !important; /* Más oscuro */
+    border-color: #12134a !important;
+    color: white !important;
+}
+
+/* Botones "Outline Dark" */
+.btn-outline-dark {
+    color: var(--sc-dark-blue);
+    border-color: var(--sc-dark-blue);
+}
+.btn-outline-dark:hover, .btn-outline-dark:focus, .btn-outline-dark:active {
+    background-color: var(--sc-dark-blue) !important;
+    color: white !important;
+}
+
+/* Botones Primary (también Dark Blue) */
+.btn-primary {
+    background-color: var(--sc-dark-blue);
+    border-color: var(--sc-dark-blue);
+}
+.btn-primary:hover {
+    background-color: #12134a;
+    border-color: #12134a;
+}
+.btn-outline-primary {
+    color: var(--sc-dark-blue);
+    border-color: var(--sc-dark-blue);
+}
+.btn-outline-primary:hover {
+    background-color: var(--sc-dark-blue);
+    color: white;
+}
+
+/* Botones Danger (Rojo) */
+.btn-danger {
+    background-color: var(--sc-red);
+    border-color: var(--sc-red);
+}
+.btn-danger:hover {
+    background-color: #b50510;
+    border-color: #b50510;
+}
+.btn-outline-danger {
+    color: var(--sc-red);
+    border-color: var(--sc-red);
+}
+.btn-outline-danger:hover {
+    background-color: var(--sc-red);
+    color: white;
+}
+
+/* Botones Secondary (Light Blue) */
+.btn-secondary {
+    background-color: var(--sc-light-blue);
+    border-color: var(--sc-light-blue);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #3b6b8c;
+    border-color: #3b6b8c;
+}
+.btn-outline-secondary {
+    color: var(--sc-light-blue);
+    border-color: var(--sc-light-blue);
+}
+.btn-outline-secondary:hover {
+    background-color: var(--sc-light-blue);
+    color: white;
+}
+
+/* Tarjetas (Cards) */
+.card {
+    border-color: var(--sc-gray);
+    background-color: white;
+}
+.card-header {
+    border-bottom: 1px solid var(--sc-gray);
+}
+.card-header.bg-dark {
+    background-color: var(--sc-dark-blue) !important;
+    border-bottom: 2px solid var(--sc-red); /* Acento rojo en cabeceras */
+}
+
+/* Tablas */
+.table-dark {
+    --bs-table-bg: var(--sc-dark-blue);
+    --bs-table-border-color: var(--sc-light-blue);
+}
+.table-dark th {
+    border-bottom: 2px solid var(--sc-red) !important; /* Acento rojo en tabla */
+}
+
+/* Inputs y focus */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus, .form-select:focus {
+    border-color: var(--sc-light-blue);
+    box-shadow: 0 0 0 0.25rem rgba(78, 139, 181, 0.25);
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: var(--sc-dark-gray) !important;
+    color: var(--sc-off-white) !important;
+    border-top: 4px solid var(--sc-red) !important;
+}
+.footer small {
+    color: var(--sc-off-white);
 }
