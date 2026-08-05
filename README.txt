@@ -5,8 +5,9 @@
 
 DESARROLLADO POR
 -----------------
-Nombre : Eliana Salinas
+Nombre    : Eliana Salinas
 Matrícula : 2023-3777
+Docente   : Prof. Ivan Zorrilla
 
 REPOSITORIO GITHUB
 ------------------
